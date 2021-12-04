@@ -18,7 +18,7 @@ public class ConfiguratorServer implements Runnable {
             }
         }
         if (!Config.setup) {
-            Integer pin = new Random().nextInt(100000000);
+            Config.pin = new Random().nextInt(100000000);
             System.out.println("One or more programs require configuration!");
             //TODO Download link
             System.out.println("Please launch or install Configurator");
