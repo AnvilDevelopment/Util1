@@ -1,13 +1,22 @@
 package us.anvildevelopment.v1.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.net.httpserver.HttpServer;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Random;
 
 public class ConfiguratorServer implements Runnable {
     private static final ObjectMapper mapper = new ObjectMapper();
+    public static HttpServer server;
+    public static HashSet<String> blacklist = new HashSet<>();
+    public HashMap<String, Session> sessionMap = new HashMap<>();
+    public HashMap<String, String> userMap = new HashMap<>();
+    public boolean run = true;
     @Override
     public void run() {
         if (new File(getFileName(new Config())).exists()) {
@@ -24,7 +33,16 @@ public class ConfiguratorServer implements Runnable {
             System.out.println("Please launch or install Configurator");
             System.out.println("PIN: "+Config.pin);
         }
-        System.out.println("Port: "+Config.port);
+        InetSocketAddress in = new InetSocketAddress(Config.port);
+        if (server == null) {
+            try {
+                server = HttpServer.create(in, 0);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Connection: "+in.getLocalSocketAddress().toString());
     }
     public static Configurator getConfig(Configurator c) throws IOException {
         File input = new File(getFileName(c));
@@ -47,4 +65,5 @@ public class ConfiguratorServer implements Runnable {
         sb.append(c.getModule());
         return sb.toString();
     }
+    public static void quit() {}
 }
