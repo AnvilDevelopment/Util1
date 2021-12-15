@@ -42,7 +42,7 @@ public class ConfiguratorServer implements Runnable {
                 e.printStackTrace();
             }
         }
-        System.out.println("Connection: "+in.getLocalSocketAddress().toString());
+        System.out.println("Connection: "+server.getAddress().getHostString());
     }
     public static Configurator getConfig(Configurator c) throws IOException {
         File input = new File(getFileName(c));

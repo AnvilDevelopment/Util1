@@ -9,14 +9,16 @@ import java.io.IOException;
 
 public class LoginHandler implements HttpHandler {
     public ConfiguratorServer instance;
+
     public LoginHandler(ConfiguratorServer cs) {
 
     }
+
     @Override
     public void handle(HttpExchange exchange) throws IOException {
         if (ConfiguratorServer.blacklist.contains(exchange.getRemoteAddress().getAddress().toString())) {
             exchange.close();
-    } else {
+        } else {
             String uid = exchange.getRequestHeaders().getFirst("uid");
             if (instance.userMap.containsKey(uid)) {
                 String auth = instance.userMap.get(uid);
@@ -25,4 +27,6 @@ public class LoginHandler implements HttpHandler {
                 }
             }
         }
+
+    }
 }
