@@ -1,4 +1,4 @@
-package us.anvildevelopment.v1.util1.permissions;
+package us.anvildevelopment.util.tools.permissions;
 
 /**
  * All methods default to false and should return false in case of an error, it would be best to structure supporting code with this in mind.

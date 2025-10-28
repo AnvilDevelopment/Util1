@@ -1,4 +1,4 @@
-package us.anvildevelopment.v1.util1.permissions;
+package us.anvildevelopment.util.tools.permissions;
 
 import java.io.Serializable;
 import java.util.HashMap;

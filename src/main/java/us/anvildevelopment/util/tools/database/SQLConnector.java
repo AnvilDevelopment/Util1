@@ -3,13 +3,13 @@
  * All Rights Reserved.
  */
 
-package us.anvildevelopment.v1.util1.database;
+package us.anvildevelopment.util.tools.database;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mysql.cj.xdevapi.*;
-import us.anvildevelopment.v1.util1.exceptions.TypeNotSetException;
-import us.anvildevelopment.v1.util1.database.annotations.Key;
-import us.anvildevelopment.v1.util1.database.annotations.MemoryOnly;
+import us.anvildevelopment.util.tools.exceptions.TypeNotSetException;
+import us.anvildevelopment.util.tools.database.annotations.Key;
+import us.anvildevelopment.util.tools.database.annotations.MemoryOnly;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
