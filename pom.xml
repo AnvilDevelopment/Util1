@@ -16,6 +16,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>tc</id>
+            <url>https://nexus.anvildevelopment.us/httpAuth/app/maven/repository</url>
+        </repository>
+    </distributionManagement>
+
     <repositories>
         <repository>
             <id>sonatype-snapshots</id>
