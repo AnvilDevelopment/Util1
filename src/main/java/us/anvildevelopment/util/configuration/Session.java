@@ -1,4 +1,4 @@
-package us.anvildevelopment.v1.configuration;
+package us.anvildevelopment.util.configuration;
 
 public class Session {
     public String project;

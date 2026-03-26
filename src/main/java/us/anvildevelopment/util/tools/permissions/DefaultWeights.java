@@ -1,4 +1,4 @@
-package us.anvildevelopment.v1.util1.permissions;
+package us.anvildevelopment.util.tools.permissions;
 
 /**
  * The weight of an entry can be any integer

@@ -1,4 +1,4 @@
-package us.anvildevelopment.v1.configuration;
+package us.anvildevelopment.util.configuration;
 
 public class Config implements Configurator{
     public static Boolean setup = false;

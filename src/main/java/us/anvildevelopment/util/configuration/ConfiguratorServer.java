@@ -1,4 +1,4 @@
-package us.anvildevelopment.v1.configuration;
+package us.anvildevelopment.util.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpServer;
@@ -64,6 +64,13 @@ public class ConfiguratorServer implements Runnable {
         sb.append("_");
         sb.append(c.getModule());
         return sb.toString();
+    }
+    public boolean isBlacklisted(String ip) {
+        return blacklist.contains(ip);
+    }
+
+    public boolean isInvalidUser(String uid) {
+        return userMap.containsKey(uid) && "INVALID".equalsIgnoreCase(userMap.get(uid));
     }
     public static void quit() {}
 }

@@ -1,4 +1,4 @@
-package us.anvildevelopment.v1.util1.permissions;
+package us.anvildevelopment.util.tools.permissions;
 
 public interface Entry {
     String getName();

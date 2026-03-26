@@ -3,7 +3,7 @@
  * All Rights Reserved.
  */
 
-package us.anvildevelopment.v1.util1.database.annotations;
+package us.anvildevelopment.util.tools.database.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
