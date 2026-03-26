@@ -8,6 +8,7 @@ import java.util.Map;
  * A flexible permission container designed to be embedded in many server applications
  */
 public class BasicPermissionContainer implements Authorizable, Serializable {
+    public BasicPermissionContainer() {}
     public Map<String, Map<String, Entry>> permissionSet = new HashMap<>();
     @Override
     public boolean allowed(String s, String action) {

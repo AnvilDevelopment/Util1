@@ -11,6 +11,8 @@ public class BasicEntry implements Entry {
         this.weight = weight;
     }
 
+    public BasicEntry() {}
+
     @Override
     public String getName() {
         return action;

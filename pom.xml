@@ -147,9 +147,9 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <descriptors>
-                                <descriptor>src/assembly/jar-with-dependencies.xml</descriptor>
-                            </descriptors>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
                             <archive>
                                 <manifestEntries>
                                     <Multi-Release>true</Multi-Release>
