@@ -18,8 +18,8 @@
 
     <distributionManagement>
         <repository>
-            <id>tc</id>
-            <url>https://nexus.anvildevelopment.us/httpAuth/app/maven/repository</url>
+            <id>Sonatype</id>
+            <url>https://repo.anvildevelopment.us/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
