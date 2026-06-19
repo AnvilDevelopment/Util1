@@ -65,10 +65,7 @@ public class BasicPermissionContainer implements Authorizable, Serializable {
         return 0;
     }
     private void addEntry(String id, Entry e) {
-        if (permissionSet.containsKey(id)) {
-            HashMap<String, Entry> iPS = (HashMap<String, Entry>) permissionSet.get(id);
-            iPS.putIfAbsent(id, e);
-        }
+        permissionSet.computeIfAbsent(id, k -> new HashMap<>()).put(e.getName(), e);
     }
 
 
@@ -76,6 +73,16 @@ public class BasicPermissionContainer implements Authorizable, Serializable {
         if (!permissionSet.containsKey(id)) return false;
         Map<String, Entry> iPS = permissionSet.get(id);
         return iPS.containsKey(entry);
+    }
+
+    @Override
+    public boolean removeEntry(String accessor, String id, Entry entry) {
+        if (!doesEntryExist(id, entry.getName())) return false;
+        if (allowedRelational(accessor, id, entry)) {
+            permissionSet.get(id).remove(entry.getName());
+            return true;
+        }
+        return false;
     }
 
     @Override
