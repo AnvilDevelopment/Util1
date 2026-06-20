@@ -13,6 +13,8 @@ public interface Authorizable {
 
     boolean addEntry(String accessor, String id, Entry entry);
 
+    boolean removeEntry(String accessor, String id, Entry entry);
+
     boolean editPermission(String accessor, String id, Entry entry);
 
     /**
